@@ -1,0 +1,20 @@
+{% load staticfiles i18n smart_load %}
+{% load thumbnail from easy_thumbnails as easy_thumbnail %}
+
+
+<div class="hidden-xs">
+  {% spaceless %}
+  {% for fitem in fitems %}
+    <a href="{% easy_thumbnail fitem 960x0 crop %}" class="m2 iblock group-gallery">
+        <img src="{% easy_thumbnail fitem 140x86 crop %}"
+             class="img-responsive dblock m2 mtop10" /></a>
+  {% endfor %}
+  {% endspaceless %}
+</div>
+
+<div class="visible-xs">
+  {% for fitem in fitems %}
+      <img src="{% easy_thumbnail fitem 500x0 crop %}"
+             class="img-responsive mtop10" style="margin-left: auto; margin-right: auto" /></a>
+  {% endfor %}
+</div>
